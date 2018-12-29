@@ -1,6 +1,6 @@
 ﻿namespace DeviceEmulation.Interfaces
 {
-    internal interface IThermal : IDeviceEntity //система термоконтроля
+    public interface IThermal : IDeviceEntity //система термоконтроля
     {
         int GetThermal();
 

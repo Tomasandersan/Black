@@ -24,12 +24,7 @@ namespace DeviceEmulation.Devices
 
         public override string GetDeviceState()
         {
-            if (_humidDevice.IsDeviceSwitchOn)
-            {
-                return $"`{_humidDevice.Name}` state: switch on";
-            }
-
-            return $"`{_humidDevice.Name}` state: switch off";
+            return _humidDevice.IsDeviceSwitchOn ? $"`{_humidDevice.Name}` state: switch on" : $"`{_humidDevice.Name}` state: switch off";
         }
 
         public string SwitchOn()
