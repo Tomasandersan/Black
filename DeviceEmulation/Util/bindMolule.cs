@@ -14,6 +14,7 @@ namespace DeviceEmulation.Util
             container.RegisterType<ILighter, LighterDevice>(new ContainerControlledLifetimeManager());
             container.RegisterType<IThermal, ThermalDevice>(new ContainerControlledLifetimeManager());
             container.RegisterType<IDeviceEntity, DeviceEntity>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IDeviceControl, Hub>(new ContainerControlledLifetimeManager());
 
             return container;
         }

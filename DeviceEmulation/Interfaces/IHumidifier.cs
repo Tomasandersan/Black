@@ -1,6 +1,6 @@
 ﻿namespace DeviceEmulation.Interfaces
 {
-    internal interface IHumidifier : IDeviceEntity //увлажнитель воздуза
+    public interface IHumidifier : IDeviceEntity //увлажнитель воздуза
     {
         string GetHumidity();
 

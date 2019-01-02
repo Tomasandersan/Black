@@ -1,6 +1,6 @@
 ﻿namespace DeviceEmulation.Interfaces
 {
-    internal interface ILighter : IDeviceEntity //Система освещения
+    public interface ILighter : IDeviceEntity //Система освещения
     {
         string GetIllumination();
 

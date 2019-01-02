@@ -1,7 +1,7 @@
-﻿using System;
-using DeviceEmulation.Interfaces;
+﻿using DeviceEmulation.CosmosDB;
+using DeviceEmulation.Devices;
 using DeviceEmulation.Util;
-using Unity;
+using DeviceEmulation.WebJobs.ConnectionHost;
 
 namespace DeviceEmulation
 {
@@ -9,12 +9,12 @@ namespace DeviceEmulation
     {
         static void Main(string[] args)
         {
-            var container = BindMolule.BindLoad();
-            var humidifier = container.Resolve<IHumidifier>();
-            var lighter = container.Resolve<ILighter>();
-            var thermal = container.Resolve<IThermal>();
-            new Hub(humidifier,lighter,thermal).HubControl();
-            Console.ReadKey();
+            BindMolule.BindLoad();
+
+            new Hub().DeviceHubRegistrartion(new LighterDevice(), "Light_device_1");
+
+            new CreateDb().CreateDataBase();
+
+            DefaultHostConnection.Connection();
         }
-    }
-}
+    }}
